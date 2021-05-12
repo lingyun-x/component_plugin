@@ -31,6 +31,7 @@ interface IPlugin : CoroutineScope {
     fun <T> registerService(clazz: Class<T>, service: T)
     fun <T> getConfigService(clazz: Class<T>): T
     fun <T> getServiceAsync(clazz: Class<T>): Deferred<T>
+    fun getAllServices(): Map<String, Any>
 
     fun awaitExecuteCompleteAsync(): Deferred<Any>
 }

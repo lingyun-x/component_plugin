@@ -81,6 +81,9 @@ abstract class AbstractPlugin(coroutineScope: CoroutineScope, override val plugi
     }
 
     override fun cancelPlugin() {
+        services.clear()
         executeJob?.cancel()
     }
+
+    override fun getAllServices(): Map<String, Any> = services
 }
