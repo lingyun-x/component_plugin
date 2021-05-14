@@ -101,6 +101,10 @@ object PluginManager {
         return (pluginTree.findNodeByName(pluginName) as PluginNode).plugin
     }
 
+    fun <T : IPlugin> getPlugin(clazz: Class<T>): T? {
+        return (pluginTree.findNodeByName(clazz.simpleName) as PluginNode).plugin as T?
+    }
+
     fun getPluginNode(pluginName: String): PluginNode {
         return pluginTree.findNodeByName(pluginName) as PluginNode
     }
